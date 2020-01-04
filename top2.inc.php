@@ -8,9 +8,31 @@ body{
     align-content: center;
     margin: 0 auto;
 }
-
+.code{
+    color:#888888 ;
+    background-color: #fff8b5;
+    padding:20px;
+    width:700px;
+}
+.descripcio{
+    background-color: #bcf5f5;
+    padding:20px;
+    width:700px;
+}
+hr{
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 li{
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+}
+.return{
+
+    background-color: #bcf5f5;
+    padding:20px;
+    width:700px;
+    margin-bottom: 20px;
 }
 a{
     color: black;

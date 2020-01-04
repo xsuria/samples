@@ -3,27 +3,6 @@
     <?php include("top2.inc.php")?>
     <div style="width: 800px; padding:20px;">
         <h1>Classes</h1>
-        <h2>Variables</h2>
-        <p>
-            <b>Private:</b><br>
-            Desde la misma clase que declara<br>
-            <b>Protected:</b><br>
-            Desde la misma clase que declara<br>
-            Desde las clases que heredan esta clase<br>
-            <b>Public:</b><br>
-            Desde la misma clase que declara<br>
-            Desde las clases que heredan esta clase<br>
-            Desde cualquier elemento fuera de la clase<br>
-
-        </p>
-
-
-    </div>
-</html>
-
-
-
-
 
 <?php
 
@@ -31,42 +10,71 @@
 Definim la clase, la variable nom es comú per tota la clase, 
 al ser publica altres clases poden accedir ala variable
 
+Private:
 
+Desde la misma clase que declara
+Protected:
+
+Desde la misma clase que declara
+Desde las clases que heredan esta clase
+Public:
+
+Desde la misma clase que declara
+Desde las clases que heredan esta clase
+Desde cualquier elemento fuera de la clase
 
 Es posible impedir que un método pueda sobreescribirse mediante la palabra final:
 También se puede impedir que la clase pueda heredarse mediante la misma palabra:
 
 */
 
+
+/**************************************
+ *              BASIC
+ * ***********************************/
+
+ // Podem donar valors a les variables definides.
+
 class Animals {
     public $nom;
     function retorna(){
         echo $this->nom;
-        echo "<br>";
     }
 }
 
+echo "<p class='return'><b>Basic:</b><br>";
 $Animal = new Animals;
 $Animal->nom = "Tana"; // Podem donar valors a les variables definides.
 $Animal->retorna();
+echo "</p>";
 
-echo "<hr>";
+
+/**************************************
+ *              COLANR
+ * ***********************************/
+
 /* Clonar Classes clone
 Podem clonar les clases obtenint el mateix resultat */
 
+echo "<p class='return'><b>Clonar:</b><br>";
 $Animal = new Animals;
 $Animal->nom = "Tana"; // Podem donar valors a les variables definides.
 $Animal->retorna();
-
+echo "<br>";
 $Animal2 = clone $Animal;
 $Animal2->nom = "Kenia"; // Podem donar valors a les variables definides.
 $Animal2->retorna();
+echo "</p>";
 
-echo "<hr>";
+
+/**************************************
+ *              CONSTRUCTOR
+ * ***********************************/
 
 /* Classes recurrents 
 Podem usar new self per crear un objecte igual dins; */
 
+echo "<p class='return'><b>Constructor:</b><br>";
 class Recurretn{
     public $cont;
     // si volem passar paramets a la clase fem un cosntructor;
@@ -85,11 +93,15 @@ class Recurretn{
 
 $Recurrent = new Recurretn(0);
 $Recurrent->suma();
+echo "</p>";
 
-echo "<hr>";
 
-/* Extendre classes */
 
+/**************************************
+ *              EXTENSIÓ DE CLASSES
+ * ***********************************/
+
+echo "<p class='return'><b>Extends:</b><br>";
 
 class multiplica{
     public function multi($var1,$var2){
@@ -107,7 +119,7 @@ class resta extends multiplica{
 $resta = new resta;
 $resta->rest(5,2);
 $resta->multi(5,2); // multi està dins la clase extesa multiplica
-echo "<hr>";
+echo "</p>";
 
 
 /* Inclou les clases */
@@ -118,20 +130,25 @@ require_once('classes/consulta.php');
 require_once('traits/patas.php');
 
 
+/**************************************
+ *              Namespaces
+ * ***********************************/
+
+echo "<p class='return'><b>Namespaces:</b><br>";
 
 /* Namespace 
 Es poden accedir a les clases per noms asseignats dins l'arxiu include de la clase */
 
 $suma = new calculs\sumatorio\Suma; //nameespace dins la clase
 $suma->sum(2,2);
-echo "<hr>";
+echo "<br>";
 
 // També podem fer referencia amb use
 
 use calculs\sumatorio\Suma; //nameespace dins la clase
 $clase = new Suma;
 $clase->sum(8,8);
-echo "<hr>";
+echo "<br>";
 
 /* Podem cridar altres clases desde dins la clase */
 class suma2{
@@ -142,16 +159,29 @@ class suma2{
 
 $Suma2 = new suma2;
 $Suma2->suma(2,2);
-echo "<hr>";
+
+echo "</p>";
+
+/**************************************
+ *              Database
+ * ***********************************/
+
+echo "<p class='return'><b>Database:</b><br>";
 
 /* Connexions a la base de dades */
 
 $consulta = new consulta; // consulta esta extesa a database que fa la connexio
-$conditionals[]=array("col2","txt1","=");
-$conditionals[]=array("col2","txt1","=");
-$res = $consulta->selectAll('test1',$conditionals);
+$conditionals[]=array("name","tana","=");
+$conditionals[]=array("type","cat","=");
+$res = $consulta->selectAll('pets',$conditionals);
 print_r($res);
-echo "<hr>";
+echo "</p>";
+
+/**************************************
+ *              Function on construct
+ * ***********************************/
+
+echo "<p class='return'><b>Functions on construct:</b><br>";
 
 /* Assignar funcions a variables */
 
@@ -167,7 +197,13 @@ class ClaseA
 $a = new ClaseA;
 $funcio = $a->prova;
 echo $funcio();
-echo "<hr>";
+echo "<p>";
+
+/**************************************
+ *              Constants
+ * ***********************************/
+
+echo "<p class='return'><b>Constants:</b><br>";
 
 /* es poden definir constants */
 
@@ -178,7 +214,13 @@ class Coche {
 echo Coche::RUEDAS . "\n";
 $miCoche = new Coche();
 echo $miCoche::RUEDAS . "\n";
-echo "<hr>";
+echo "</p>";
+
+/**************************************
+ *              Traits
+ * ***********************************/
+
+echo "<p class='return'><b>Traits:</b><br>";
 
 /* es pot resoldre la limitacio de una sola extensio amb trait, només relacions horitzontasl*/
 
@@ -206,6 +248,8 @@ $o->getColor();
 $o->getPatas(); 
 echo $o->var;
 
+echo "</p>";
+
 
 // https://diego.com.es/instancia-de-clases-en-php
 //https://diego.com.es/programacion-orientada-a-objetos-en-php
@@ -213,3 +257,6 @@ echo $o->var;
 //https://webdeasy.de/en/flexible-php-7-mysqli-database-class-download/
 //https://www.php.net/manual/es/book.mysqli.php
 ?>
+
+</div>
+</html>
