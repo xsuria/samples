@@ -19,6 +19,9 @@ body{
     padding:20px;
     width:700px;
 }
+b{
+    margin-bottom: 10px;
+}
 hr{
     width: 90%;
     margin-top: 20px;
