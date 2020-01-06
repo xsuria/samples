@@ -1,6 +1,5 @@
 <?php
 
-
 class Database extends Variable{
 
     var $host   = "localhost"; //database server

@@ -1,7 +1,7 @@
-<html>
-    <?php include("top2.inc.php")?>
-    <div style="width: 800px; padding:20px;">
-        <h1>Classes</h1>
+    <html>
+        <?php include("top2.inc.php")?>
+        <div style="width: 800px; padding:20px;">
+            <h1>Mysqli</h1>
 
 <?php 
 
@@ -296,3 +296,5 @@ echo "</div>";
 
 
 ?>
+</div>
+</html>
