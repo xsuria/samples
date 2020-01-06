@@ -161,7 +161,6 @@
 
                 mysqli_stmt_data_seek($stmt, 2);
                 mysqli_stmt_fetch($stmt);
-                mysqli_stmt_close($stmt);
 
                 echo "<ul>";
                 echo "<li>Anar a una fila concreta:".$name."-".$type."</li>";

@@ -5,7 +5,8 @@
         <ul>
             <li><a href="basics.php">PHP Basics</a></li>
             <li><a href="mysqli.php">MySqli</a></li>
-            <li><a href="mysql_stmt.php">MySqli STMT</a></li>
+            <li><a href="mysqli_stmt.php">MySqli STMT</a></li>
+            <li><a href="mysqli_result.php">MySqli Result</a></li>
             <li><a href="classes.php">Exemples de Classes</a></li>
         </ul>
     </div>
