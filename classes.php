@@ -251,7 +251,7 @@ echo $o->var;
 echo "</p>";
 
 
-// https://diego.com.es/instancia-de-clases-en-php
+# https://diego.com.es/instancia-de-clases-en-php
 //https://diego.com.es/programacion-orientada-a-objetos-en-php
 //https://codigofacilito.com/videos/curso_git_primeros_pasos
 //https://webdeasy.de/en/flexible-php-7-mysqli-database-class-download/
