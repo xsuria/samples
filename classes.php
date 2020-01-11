@@ -37,6 +37,7 @@ También se puede impedir que la clase pueda heredarse mediante la misma palabra
 
 class Animals {
     public $nom;
+    public $nom2="coco";
     function retorna(){
         echo $this->nom;
     }
@@ -46,6 +47,8 @@ echo "<p class='return'><b>Basic:</b><br>";
 $Animal = new Animals;
 $Animal->nom = "Tana"; // Podem donar valors a les variables definides.
 $Animal->retorna();
+echo "<br>";
+echo $Animal->nom2;
 echo "</p>";
 
 
@@ -101,7 +104,7 @@ echo "</p>";
  *              EXTENSIÓ DE CLASSES
  * ***********************************/
 
-echo "<p class='return'><b>Extends:</b><br>";
+echo "<p class='return'><b>Extends:</b> la funcio mare es crida amb \$this o parent<br>";
 
 class multiplica{
     public function multi($var1,$var2){
@@ -112,7 +115,9 @@ class multiplica{
 class resta extends multiplica{
     public function rest($var1,$var2){
         echo "$var1-$var2=".($var1-$var2)."<br>";
-        echo "$var1*$var2=".$this->multi($var1,$var2); // Com esta extesa amb this podem accedir a funcionas de l'altre.
+        echo "$var1*$var2=".$this->multi($var1,$var2)."<br>"; // Com esta extesa amb this podem accedir a funcionas de l'altre.
+        echo parent::multi(2,2)."<br>";
+        echo $this->multi(3,3);
     }
 }
 
