@@ -267,7 +267,7 @@ Class infoConsult extends connection{
         if ($this->connection->ping()) {
             echo ("<li>Si la connexió esta ok si no reconnecta: ¡La conexión está bien!</li>");
         } else {
-            echo ("<li>Error".$mysqli->error.'</li>');
+            echo ("<li>Error".$this->connection->error.'</li>');
         }
         echo "</ul>";
 

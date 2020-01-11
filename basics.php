@@ -10,11 +10,47 @@
         <ul>
         <?php 
             if (1 == 2):
+
+            elseif (2==3):
+            
             else:
-                echo "<li>If amb : else: endif</li>";
+                echo "<li>If amb : else: elseif: endif</li>";
             endif; 
         ?>
         <li> <\?= permes a partir de php 5.4</li> 
+
+        <?php
+        $resultat = empty($hola) ? "adeu" : "hola";
+
+        echo "<li>Comparador : ? resultat: ".$resultat."</li>";
+
+        echo "<li>Comparador <=>: si a> torna 1, si b> torna -1, si iguals torna 0</li>";
+
+        @file('invnetat') or
+            $res = "No existeix";
+
+        echo "<li>@ no torna error i fa de comprarador, res: $res</li>";
+
+        $a=1;
+        $b=2;
+
+        if ($a==1 xor $b==2):
+            $r1='true';
+        else:
+            $r1='false';
+        endif;
+
+        if ($a==1 xor $b==3):
+            $r2='true';
+        else:
+            $r2='false';
+        endif;
+
+        echo "<li>Compara amb xor si un desl dos compleix pero no els dos: $r1 , $r2</li>";
+
+
+
+        ?>
         
 
         <?php #comentaris ?>
@@ -87,6 +123,15 @@
             ?>
             <li>Amb get_type es pot saber el tious d'una variable</li>
             <li>un string es pot tractar com arra i fa referencia a la lletra en la posicio</li>
+            <?php
+                echo "<li>Unio i compraració arrays + (si keys iguals mana primera)</li>";
+
+                $a = array("a" => "apple", "b" => "banana");
+                $b = array("a" => "pear", "b" => "strawberry", "c" => "cherry");
+                    $c = $a + $b; // Unión de $a y $b
+                    echo "Unión de \$a y \$b: \n";
+                    print_r($c);
+            ?>
 
         </div>
 
