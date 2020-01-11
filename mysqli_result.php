@@ -14,7 +14,7 @@
         echo "<div class='return'><b>Last Position:</b><br>seveix per fer un seek del fetch_field (columnes de la taula)<br>";
 
         Class lastPosition extends Database{
-ç
+
 
             function __construct(){
                 $this->connect();
