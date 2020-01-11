@@ -57,6 +57,12 @@ function mostra4(){
 $a = 'hola';
 $$a = 'mundo';
 
+$n1=$n2=5;
+
+function doble($num){
+    return $num*2;
+}
+
 echo "<li>Definim com var fora del array: Null".mostra()."</li>";
 echo "<li>Definim global dins array: ".mostra2()."</li>";
 echo "<li>Definim global dins array: ".mostra3()."</li>";
@@ -64,11 +70,10 @@ echo "<li>Amb static persisteix dins del array: ".mostra4()." ".mostra4()."</li>
 echo "<li>Creacio dinamica de vars \$\$foo: $a , $hola</li>";
 echo "<li>Creacio dinamica de vars \$\$foo: $a,  {${$a}}</li>";
 echo "<li>Definicio Constants define(\"FOO\",     \"something\");</li>";
+echo "<li>++\$foo o \$foo++: ".doble(++$n1)." / ".doble($n2++)."</li>";
 
 echo "<ul>";
 echo "</div>";
-
-
 
 ?>
 

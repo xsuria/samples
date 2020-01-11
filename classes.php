@@ -256,6 +256,26 @@ echo $o->var;
 echo "</p>";
 
 
+echo "<p class='return'><b>Saber si es instancia de un objecte instanceof :</b><br>";
+echo "<ul>";
+
+class class1 {
+    
+}
+class class2 {
+   
+}
+
+$a = new class1;
+
+$v1 = $a instanceof class1;
+$v2 = $a instanceof class2;
+
+echo "<li>Si la var es instancia (instanceof) de class: $v1 / $v2 </li>";
+
+echo "</ul></p>";
+
+
 # https://diego.com.es/instancia-de-clases-en-php
 //https://diego.com.es/programacion-orientada-a-objetos-en-php
 //https://codigofacilito.com/videos/curso_git_primeros_pasos
