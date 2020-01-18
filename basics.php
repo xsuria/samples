@@ -20,7 +20,8 @@
         <li> <\?= permes a partir de php 5.4</li> 
 
         <?php
-        $resultat = empty($hola) ? "adeu" : "hola";
+        $resultat = !empty($hola) ? "adeu  " : "hola  ";
+        $resultat .= empty($hola) ? "adeu  " : "hola  ";
 
         echo "<li>Comparador : ? resultat: ".$resultat."</li>";
 

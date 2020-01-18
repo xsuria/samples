@@ -74,11 +74,14 @@
 
         echo "<div class='return'><b>goto </b>Salta a una part del codi amb etiqueta 'etiqueta:'<br>";
 
-        goto b;
-        $a=1;
+        $a=0;
 
+        goto b;
+        $a++;
         b:
-        $a=2;
+        $a++;
+        c:
+        $a++;
 
 
         echo "<li>resultat: $a</li>";

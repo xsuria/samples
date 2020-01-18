@@ -321,7 +321,12 @@ class Template implements iTemplate,iTemplate2{
 
     }
   
+
     public function getHtml($template){ // si falta o els parametres no son iguals peta
+    }
+
+    public function grtuser(){
+        
     }
 }
 echo "</p>";

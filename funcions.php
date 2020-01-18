@@ -28,8 +28,8 @@
         echo "<div class='return'><b>Funcions per referencia, modifica el valor de fora</b>";
 
  
-        function añadir_algo(&$cadena){
-            $cadena .= 'y algo más.';
+        function añadir_algo(&$cadena, $algo='2'){
+            $cadena .= 'y algo más.'.$algo;
         }
         $cad = 'Esto es una cadena, ';
         añadir_algo($cad);
@@ -44,7 +44,7 @@
 
  
         function suma(...$vals){    
-            $res = 0;
+            static $res = 0;
             foreach ($vals as $valor){
                 $res+=$valor;
             }
@@ -52,6 +52,7 @@
         }
        
         echo "<ul>";
+        echo "<li>valor: ".suma(1,2,3,4)."</li>";
         echo "<li>valor: ".suma(1,2,3,4)."</li>";
 
         function add($a, $b) {
